@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sygna — Prototype Web (MediaPipe)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>This is a sample index.html file.</p>
+  <header>
+    <div class="logo">Sygna — Prototype</div>
+    <div class="controls">
+      <button id="startBtn" class="btn primary">Démarrer la caméra</button>
+      <button id="stopBtn" class="btn">Arrêter</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="left">
+        <h1>Traduction signe → texte (prototype)</h1>
+        <p>Ce prototype utilise MediaPipe Hands pour détecter les mains et reconnaître quelques gestes simples.</p>
+        <div class="translation">
+          <div id="detectedGesture" class="detected">Aucun geste détecté</div>
+          <div id="translationText" class="translationText">Traduction : —</div>
+        </div>
+      </div>
+      <div class="right">
+        <video id="input_video" class="video" autoplay muted playsinline></video>
+        <canvas id="overlay" class="overlay"></canvas>
+      </div>
+    </section>
+
+    <section class="info">
+      <p>Gestes reconnus : <strong>open palm</strong> (Bonjour), <strong>fist</strong> (Non), <strong>thumb up</strong> (Oui)</strong></p>
+    </section>
+  </main>
+
+  <footer>
+    Prototype Sygna — demo — pas encore production.
+  </footer>
+
+  <!-- MediaPipe via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
